@@ -56,29 +56,28 @@ function TryZooDropdown() {
   return (
     <div className="relative" ref={menuRef}
       onMouseEnter={() => { clearTimeoutRef(); setIsOpen(true) }}
-      onMouseLeave={() => { clearTimeoutRef(); timeoutRef.current = setTimeout(() => setIsOpen(false), 500) }}
+      onMouseLeave={() => { clearTimeoutRef(); timeoutRef.current = setTimeout(() => setIsOpen(false), 800) }}
     >
-      <Button size="sm" onClick={() => setIsOpen(!isOpen)}
+      <button onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          'rounded-full px-5 font-medium transition-all duration-200 hover:scale-[1.02] shadow-lg',
-          'bg-primary text-primary-foreground hover:bg-primary/90 shadow-foreground/10',
-          isOpen && 'bg-primary/90'
+          'btn-brutalist pill-pink text-sm py-2 px-4',
+          isOpen && 'translate-x-[2px] translate-y-[2px] shadow-[6px_6px_0_0_#000]'
         )}
       >
         Try Zen
-        <ChevronDown className={cn('w-4 h-4 ml-1 transition-transform duration-200', isOpen && 'rotate-180')} />
-      </Button>
+        <ChevronDown className={cn('w-4 h-4 transition-transform duration-200', isOpen && 'rotate-180')} />
+      </button>
 
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.97 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.97 }}
-            transition={{ duration: 0.15, ease: 'easeOut' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.12, ease: 'easeOut' }}
             className="absolute right-0 top-full w-[420px] max-w-[calc(100vw-2rem)] z-50"
           >
-            <div className="h-3" />
+            <div aria-hidden className="h-5" />
             <div className="backdrop-blur-xl border rounded-2xl shadow-2xl overflow-hidden bg-secondary/95 border-border shadow-background/50">
               {/* Zen AI Models */}
               <div className="p-4">
@@ -257,7 +256,7 @@ function DropdownMenu({ menu, isOpen, onOpen, onClose }: { menu: MenuConfig; isO
   return (
     <div className="relative" ref={menuRef}
       onMouseEnter={() => { clearTimeoutRef(); onOpen() }}
-      onMouseLeave={() => { clearTimeoutRef(); timeoutRef.current = setTimeout(onClose, 500) }}
+      onMouseLeave={() => { clearTimeoutRef(); timeoutRef.current = setTimeout(onClose, 800) }}
     >
       <button onClick={() => isOpen ? onClose() : onOpen()}
         className={cn(
@@ -272,15 +271,15 @@ function DropdownMenu({ menu, isOpen, onOpen, onClose }: { menu: MenuConfig; isO
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.97 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.97 }}
-            transition={{ duration: 0.15, ease: 'easeOut' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.12, ease: 'easeOut' }}
             className="absolute left-0 top-full w-80 max-w-[calc(100vw-2rem)] z-50"
             onMouseEnter={() => { clearTimeoutRef(); onOpen() }}
-            onMouseLeave={() => { clearTimeoutRef(); timeoutRef.current = setTimeout(onClose, 500) }}
+            onMouseLeave={() => { clearTimeoutRef(); timeoutRef.current = setTimeout(onClose, 800) }}
           >
-            <div className="h-3" />
+            <div aria-hidden className="h-5" />
             <div className="backdrop-blur-xl border rounded-xl shadow-2xl overflow-hidden bg-secondary/95 border-border shadow-background/50">
               <div className="py-2">
                 {menu.items.map((item) => {
