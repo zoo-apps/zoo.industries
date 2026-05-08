@@ -15,6 +15,7 @@ export default function ServicesOverview() {
       link: "/models",
       cta: "Explore Zen Models",
       external: false,
+      color: "var(--brand-magenta)",
     },
     {
       icon: Shield,
@@ -24,6 +25,7 @@ export default function ServicesOverview() {
       link: "/research",
       cta: "Read Our Research",
       external: false,
+      color: "var(--brand-green)",
     },
     {
       icon: Database,
@@ -33,6 +35,7 @@ export default function ServicesOverview() {
       link: "https://zoo.bot",
       cta: "Try Zoo Bot",
       external: true,
+      color: "var(--brand-blue)",
     },
     {
       icon: Cloud,
@@ -42,6 +45,7 @@ export default function ServicesOverview() {
       link: "https://zoo.ngo",
       cta: "Try Zoo Industries",
       external: true,
+      color: "var(--brand-cyan)",
     }
   ];
 
@@ -86,46 +90,26 @@ export default function ServicesOverview() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={cn(
-                  "p-8 rounded-lg border transition-shadow",
-                  "bg-foreground/5 border-border hover:shadow-lg hover:shadow-foreground/5"
-                )}
+                className="p-8 border-2 border-black text-black shadow-[10px_10px_0_0_#000]"
+                style={{ backgroundColor: service.color }}
               >
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <div className={cn(
-                      "w-12 h-12 rounded-lg flex items-center justify-center",
-                      "bg-foreground/10"
-                    )}>
-                      <Icon className={cn(
-                        "w-6 h-6",
-                        "text-foreground"
-                      )} />
+                    <div className="w-12 h-12 flex items-center justify-center bg-black">
+                      <Icon className="w-6 h-6 text-white" />
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className={cn(
-                      "text-2xl font-semibold mb-3",
-                      "text-foreground"
-                    )}>
+                    <h3 className="text-2xl font-extrabold mb-3 text-black uppercase tracking-tight">
                       {service.title}
                     </h3>
-                    <p className={cn(
-                      "mb-4",
-                      "text-muted-foreground"
-                    )}>
+                    <p className="mb-4 text-black/80 font-medium">
                       {service.description}
                     </p>
                     <div className="space-y-2 mb-4">
                       {service.capabilities.map((capability) => (
-                        <div key={capability} className={cn(
-                          "flex items-center text-sm",
-                          "text-muted-foreground"
-                        )}>
-                          <div className={cn(
-                            "w-1.5 h-1.5 rounded-full mr-2",
-                            "bg-primary"
-                          )} />
+                        <div key={capability} className="flex items-center text-sm text-black/90 font-medium">
+                          <div className="w-2 h-2 mr-2 bg-black" />
                           {capability}
                         </div>
                       ))}
@@ -135,19 +119,13 @@ export default function ServicesOverview() {
                         href={service.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={cn(
-                          "inline-flex items-center gap-1.5 text-sm font-medium transition-colors",
-                          "text-muted-foreground hover:text-foreground"
-                        )}
+                        className="inline-flex items-center gap-1.5 text-sm font-bold uppercase tracking-wide text-black underline underline-offset-2 hover:no-underline"
                       >
                         {service.cta} <ArrowRight className="w-3.5 h-3.5" />
                       </a>
                     ) : (
                       <Link href={service.link}
-                        className={cn(
-                          "inline-flex items-center gap-1.5 text-sm font-medium transition-colors",
-                          "text-muted-foreground hover:text-foreground"
-                        )}
+                        className="inline-flex items-center gap-1.5 text-sm font-bold uppercase tracking-wide text-black underline underline-offset-2 hover:no-underline"
                       >
                         {service.cta} <ArrowRight className="w-3.5 h-3.5" />
                       </Link>
