@@ -12,22 +12,23 @@
   --card-foreground: #000000;
   --popover: #ffffff;
   --popover-foreground: #000000;
-  /* Brand accents lifted from the diagram. --primary drives CTAs and is
-     the loudest; --secondary/--accent are translucent so sections that
-     use them as subtle stripes still let the gradient breathe through. */
-  --primary: #e5217a;                          /* magenta */
+  /* Brand accents — exactly the three button colors (pink/green/blue),
+     used everywhere from CTAs to the background wash for one unified
+     palette. --primary drives loud CTAs; --secondary/--accent stay
+     translucent so subtle-stripe sections let the gradient breathe. */
+  --primary: #d90b7e;                          /* magenta — Industries */
   --primary-foreground: #000000;
-  --secondary: rgba(255, 255, 255, 0.5);       /* translucent panel */
+  --secondary: rgba(255, 255, 255, 0.5);
   --secondary-foreground: #000000;
-  --accent: rgba(255, 255, 255, 0.45);         /* translucent panel */
+  --accent: rgba(255, 255, 255, 0.45);
   --accent-foreground: #000000;
   --muted: rgba(255, 255, 255, 0.55);
   --muted-foreground: #1a1a1a;
-  /* Explicit brand colors — use directly via .pill-*, .panel-*, or
-     bracketed Tailwind utilities (e.g. bg-[var(--brand-green)]). */
-  --brand-green: #2ebe6f;
-  --brand-pink: #e5217a;
-  --brand-blue: #5b5bff;
+  /* Explicit brand colors — same hex as .pill-pink/-green/-blue and
+     the Hero CTAs. Use via bg-[var(--brand-pink)] etc. */
+  --brand-pink: #d90b7e;
+  --brand-green: #1faa59;
+  --brand-blue: #2d3de0;
   --brand-yellow: #f5c518;
   --destructive: #ed1c24;
   --destructive-foreground: #ffffff;
@@ -102,14 +103,17 @@ body {
   font-family: var(--font-sans);
   background-color: var(--background-fallback, #f5e8c8);
   /* Layered radial pastels produce the iridescent rainbow wash. */
+  /* Brand-tinted iridescent wash — three soft pools of pink / green /
+     indigo derived from the button palette (#d90b7e, #1faa59, #2d3de0)
+     so the page background reads as the same family as the CTAs. */
   background-image:
-    radial-gradient(at 12% 18%, #ffd580 0%, transparent 38%),
-    radial-gradient(at 82% 8%,  #ffe2a0 0%, transparent 35%),
-    radial-gradient(at 92% 58%, #c8b6ff 0%, transparent 45%),
-    radial-gradient(at 32% 82%, #ffb6e1 0%, transparent 45%),
-    radial-gradient(at 60% 50%, #b5e8c7 0%, transparent 50%),
-    radial-gradient(at 8% 88%,  #b6e6ff 0%, transparent 45%),
-    linear-gradient(135deg, #ffe6b0 0%, #beeba8 35%, #b6f0e1 60%, #c8b6ff 80%, #ffb6e1 100%);
+    radial-gradient(at 15% 18%, #ffc6e8 0%, transparent 42%),
+    radial-gradient(at 85% 12%, #c8d0ff 0%, transparent 40%),
+    radial-gradient(at 92% 62%, #ffc6e8 0%, transparent 42%),
+    radial-gradient(at 28% 82%, #c5f0d8 0%, transparent 45%),
+    radial-gradient(at 62% 50%, #d6dcff 0%, transparent 45%),
+    radial-gradient(at 8% 92%,  #c5f0d8 0%, transparent 40%),
+    linear-gradient(135deg, #ffe1ee 0%, #d8e0ff 35%, #d5f0e1 65%, #ffe1ee 100%);
   background-attachment: fixed;
   background-size: cover;
 }

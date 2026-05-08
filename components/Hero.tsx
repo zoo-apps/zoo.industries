@@ -24,19 +24,6 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 mb-8 border-0 bg-[#d90b7e]/15"
-          >
-            <Sparkles className="w-4 h-4 text-muted-foreground" />
-            <span className="text-sm text-muted-foreground">Zen4 MoDE models now available for enterprise deployment</span>
-            <Link href="/research" className="text-sm font-medium flex items-center gap-1 hover:underline text-foreground">
-              Learn more <ArrowRight className="w-3 h-3" />
-            </Link>
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
