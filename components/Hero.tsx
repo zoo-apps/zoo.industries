@@ -28,7 +28,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full border bg-foreground/5 border-border"
+            className="inline-flex items-center gap-2 px-4 py-2 mb-8 border-0 bg-[#d90b7e]/15"
           >
             <Sparkles className="w-4 h-4 text-muted-foreground" />
             <span className="text-sm text-muted-foreground">Zen4 MoDE models now available for enterprise deployment</span>
@@ -67,22 +67,22 @@ export default function Hero() {
             className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Link href="/research">
-              <Button size="lg" className="w-full sm:w-auto text-base px-8 h-12 rounded-full bg-primary text-primary-foreground hover:bg-primary/90">
+              <button className="btn-brutalist pill-pink w-full sm:w-auto">
                 Explore Our Research
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
+                <ArrowRight className="w-4 h-4" />
+              </button>
             </Link>
             <a href={site.links.platform} target="_blank" rel="noopener noreferrer">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto text-base px-8 h-12 rounded-full border-border text-foreground hover:bg-accent">
-                <Sparkles className="w-4 h-4 mr-2" />
+              <button className="btn-brutalist pill-green w-full sm:w-auto">
+                <Sparkles className="w-4 h-4" />
                 Try Zen AI
-              </Button>
+              </button>
             </a>
             <a href={site.links.bot} target="_blank" rel="noopener noreferrer">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto text-base px-8 h-12 rounded-full border-border text-foreground hover:bg-accent">
-                <Bot className="w-4 h-4 mr-2" />
+              <button className="btn-brutalist pill-blue w-full sm:w-auto">
+                <Bot className="w-4 h-4" />
                 Deploy AI Team
-              </Button>
+              </button>
             </a>
           </motion.div>
         </div>
