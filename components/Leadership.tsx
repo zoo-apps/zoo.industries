@@ -127,10 +127,7 @@ export default function Leadership() {
               className="text-center group"
             >
               <div className="mb-4">
-                <div className={cn(
-                  "w-32 h-32 mx-auto rounded-full overflow-hidden ring-2 transition-all duration-300",
-                  "bg-card ring-border group-hover:ring-ring"
-                )}>
+                <div className="w-32 h-32 mx-auto overflow-hidden transition-all duration-300">
                   <img
                     src={leader.image}
                     alt={leader.name}

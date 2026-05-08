@@ -34,10 +34,7 @@ export default function TeamMemberCard({ name, role, description, icon: Icon, gr
       <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-500 ease-in-out -z-10" />
       <div className="block mb-4 relative z-10">
         {image ? (
-          <div className={cn(
-            "w-16 h-16 rounded-full overflow-hidden ring-2 mb-4",
-            "ring-ring bg-card"
-          )}>
+          <div className="w-16 h-16 overflow-hidden mb-4">
             <img
               src={image}
               alt={name}
