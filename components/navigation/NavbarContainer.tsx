@@ -13,7 +13,7 @@ export default function NavbarContainer({ children }: { children: ReactNode }) {
   }, [])
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+    <nav className="fixed top-10 left-0 right-0 z-50 transition-all duration-500">
       <div
         className={cn(
           'mx-auto transition-all duration-500 ease-out',
