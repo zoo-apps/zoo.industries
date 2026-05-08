@@ -50,9 +50,8 @@ export default function TrustedBySection() {
                   alt={`${logo.name} logo`}
                   loading="lazy"
                   className={cn(
-                    "w-auto opacity-60 transition-opacity duration-200 hover:opacity-100",
-                    logo.className ?? "h-6",
-                    "invert"
+                    "w-auto transition-opacity duration-200",
+                    logo.className ?? "h-6"
                   )}
                 />
               </div>
@@ -73,10 +72,7 @@ export default function TrustedBySection() {
           )}>
             Trusted By
           </p>
-          <div className={cn(
-            "relative overflow-hidden border rounded-full",
-            "border-border bg-foreground/5"
-          )}>
+          <div className="relative overflow-hidden">
             <div
               className={cn(
                 "flex gap-10 py-4 px-6 text-sm w-max",
