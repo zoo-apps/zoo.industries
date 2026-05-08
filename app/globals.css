@@ -12,11 +12,11 @@
   --card-foreground: #000000;
   --popover: #ffffff;
   --popover-foreground: #000000;
-  /* Brand accents — exactly the three button colors (pink/green/blue),
-     used everywhere from CTAs to the background wash for one unified
-     palette. --primary drives loud CTAs; --secondary/--accent stay
-     translucent so subtle-stripe sections let the gradient breathe. */
-  --primary: #d90b7e;                          /* magenta — Industries */
+  /* Brand accents — pulled directly from the Zoo logo (the CMYK Venn
+     diagram in app/icon.svg). Buttons, banner, gradient, and any spot
+     accent should reach for these so the whole site reads as the
+     same family as the mark. */
+  --primary: #ea018e;                          /* magenta */
   --primary-foreground: #000000;
   --secondary: rgba(255, 255, 255, 0.5);
   --secondary-foreground: #000000;
@@ -24,12 +24,13 @@
   --accent-foreground: #000000;
   --muted: rgba(255, 255, 255, 0.55);
   --muted-foreground: #1a1a1a;
-  /* Explicit brand colors — same hex as .pill-pink/-green/-blue and
-     the Hero CTAs. Use via bg-[var(--brand-pink)] etc. */
-  --brand-pink: #d90b7e;
-  --brand-green: #1faa59;
-  --brand-blue: #2d3de0;
-  --brand-yellow: #f5c518;
+  --brand-magenta: #ea018e;
+  --brand-pink:    #ea018e;   /* alias */
+  --brand-green:   #00a652;
+  --brand-blue:    #2e3192;
+  --brand-cyan:    #01acf1;
+  --brand-yellow:  #fcf006;
+  --brand-red:     #ed1c24;
   --destructive: #ed1c24;
   --destructive-foreground: #ffffff;
   --border: #000000;
@@ -103,17 +104,19 @@ body {
   font-family: var(--font-sans);
   background-color: var(--background-fallback, #f5e8c8);
   /* Layered radial pastels produce the iridescent rainbow wash. */
-  /* Brand-tinted iridescent wash — three soft pools of pink / green /
-     indigo derived from the button palette (#d90b7e, #1faa59, #2d3de0)
-     so the page background reads as the same family as the CTAs. */
+  /* Iridescent wash — soft tints of the Zoo logo's CMYK palette
+     (magenta #ea018e, green #00a652, blue #2e3192, cyan #01acf1,
+     yellow #fcf006). Same hues as the mark, dialed down to ~15%
+     saturation so the page reads as the same family as the logo
+     and CTAs without competing with them. */
   background-image:
-    radial-gradient(at 15% 18%, #ffc6e8 0%, transparent 42%),
-    radial-gradient(at 85% 12%, #c8d0ff 0%, transparent 40%),
-    radial-gradient(at 92% 62%, #ffc6e8 0%, transparent 42%),
-    radial-gradient(at 28% 82%, #c5f0d8 0%, transparent 45%),
-    radial-gradient(at 62% 50%, #d6dcff 0%, transparent 45%),
-    radial-gradient(at 8% 92%,  #c5f0d8 0%, transparent 40%),
-    linear-gradient(135deg, #ffe1ee 0%, #d8e0ff 35%, #d5f0e1 65%, #ffe1ee 100%);
+    radial-gradient(at 14% 16%, #fff3b8 0%, transparent 38%),
+    radial-gradient(at 86% 12%, #ffc6e6 0%, transparent 40%),
+    radial-gradient(at 92% 62%, #b8dff8 0%, transparent 42%),
+    radial-gradient(at 28% 82%, #b8e8c8 0%, transparent 44%),
+    radial-gradient(at 62% 50%, #c4c8ec 0%, transparent 44%),
+    radial-gradient(at 8% 92%,  #ffc6e6 0%, transparent 40%),
+    linear-gradient(135deg, #fff3d8 0%, #ffd9ec 28%, #d8dcef 55%, #cfeede 80%, #d6ecf8 100%);
   background-attachment: fixed;
   background-size: cover;
 }
@@ -164,15 +167,18 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 10px 10px 0 0 #000;
   transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
 }
-.pill-green   { --pill-color: #1faa59; }
-.pill-pink    { --pill-color: #d90b7e; }
-.pill-blue    { --pill-color: #2d3de0; }
-.pill-yellow  { --pill-color: #f5c518; }
+.pill-green   { --pill-color: var(--brand-green); }
+.pill-pink    { --pill-color: var(--brand-magenta); }
+.pill-blue    { --pill-color: var(--brand-blue); }
+.pill-cyan    { --pill-color: var(--brand-cyan); }
+.pill-yellow  { --pill-color: var(--brand-yellow); }
+.pill-red     { --pill-color: var(--brand-red); }
 .pill-rainbow {
   background-image: linear-gradient(
     90deg,
-    #fcf006 0%, #1faa59 22%, #01acf1 44%,
-    #4f46e5 64%, #d90b7e 82%, #ed1c24 100%
+    var(--brand-yellow) 0%, var(--brand-green) 20%,
+    var(--brand-cyan)   40%, var(--brand-blue)  60%,
+    var(--brand-magenta) 80%, var(--brand-red)  100%
   );
 }
 
@@ -222,6 +228,8 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 10px 10px 0 0 #000;
   padding: 1.25rem 1.5rem;
 }
-.panel-green { --panel-color: #1faa59; }
-.panel-pink  { --panel-color: #d90b7e; }
-.panel-blue  { --panel-color: #2d3de0; }
+.panel-green { --panel-color: var(--brand-green); }
+.panel-pink  { --panel-color: var(--brand-magenta); }
+.panel-blue  { --panel-color: var(--brand-blue); }
+.panel-cyan  { --panel-color: var(--brand-cyan); }
+.panel-yellow{ --panel-color: var(--brand-yellow); }
